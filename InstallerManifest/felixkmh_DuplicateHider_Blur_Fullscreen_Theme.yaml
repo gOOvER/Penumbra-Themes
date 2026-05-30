@@ -22,3 +22,13 @@ Packages:
     PackageUrl: https://github.com/felixkmh/DH_Themes/releases/download/v2.0.0/felixkmh_DuplicateHider_Blur_Fullscreen_Theme_2_0.pthm
     Changelog:
       - some adjustments for P9 stable
+  - Version: 3.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-05-30
+    PackageUrl: https://github.com/felixkmh/DH_Themes/releases/download/DH_Blurv3.0/felixkmh_DuplicateHider_Blur_Fullscreen_Theme_3_0.pthm
+    Changelog:
+      - Updated to ThemeApiVersion 2.9.0
+      - Added ItemSelection and CustomMenus theme styles
+      - Fixed ExtraMetadata path and brush resources
+      - Fixed drop shadows with x:Shared
+      - Fixed ExplorerPanel close button (API 2.8.0)

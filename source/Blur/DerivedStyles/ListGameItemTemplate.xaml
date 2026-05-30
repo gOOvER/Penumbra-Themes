@@ -64,10 +64,10 @@
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="Text">
                                                         <Setter.Value>
-                                                            <MultiBinding StringFormat="{}{0}{1}{2}\VideoTrailer.mp4">
+                                                            <MultiBinding StringFormat="{}{0}{1}{2}\VideoTrailer.mp4" FallbackValue="" TargetNullValue="">
                                                                 <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
                                                                 <Binding Source="\ExtraMetadata\games\"/>
-                                                                <Binding Path="Game.Id"/>
+                                                                <Binding Path="Game.Id" FallbackValue="" TargetNullValue=""/>
                                                             </MultiBinding>
                                                         </Setter.Value>
                                                     </Setter>

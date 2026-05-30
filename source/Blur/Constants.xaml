@@ -29,7 +29,7 @@
     <ImageBrush x:Key="GlyphLightBrush" ImageSource="{ThemeFile 'Images/noise/highlight1.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"/>
     <ImageBrush x:Key="ControlBackgroundBrush" ImageSource="{ThemeFile 'Images/noise/background3.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"/>
     <ImageBrush x:Key="ControlBackgroundDarkBrush" ImageSource="{ThemeFile 'Images/noise/background2.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute" />
-    <ImageBrush x:Key="SelectionLightBrush" ImageSource="{ThemeFile 'Image/noise/highlight1.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"/>
+    <ImageBrush x:Key="SelectionLightBrush" ImageSource="{ThemeFile 'Images/noise/highlight1.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"/>
     <SolidColorBrush x:Key="OverlayBrush" Color="{DynamicResource OverlayColor}" />
 
     <sys:Double x:Key="FontSizeSmall">18</sys:Double>
@@ -95,8 +95,8 @@
         <GradientStop Color="Black" Offset="1"/>
     </LinearGradientBrush>
 
-    <BlurEffect x:Key="DefaultBlur" Radius="50" KernelType="Gaussian" RenderingBias="Performance"/>
-    <DropShadowEffect x:Key="DefaultDropShadow" ShadowDepth="0" Color="Black" Opacity="0.75" RenderingBias="Performance" BlurRadius="20"/>
+    <BlurEffect x:Key="DefaultBlur" x:Shared="False" Radius="50" KernelType="Gaussian" RenderingBias="Performance"/>
+    <DropShadowEffect x:Key="DefaultDropShadow" x:Shared="False" ShadowDepth="0" Color="Black" Opacity="0.75" RenderingBias="Performance" BlurRadius="20"/>
 
     <ImageBrush x:Key="BottomDropShadowBrush" ImageSource="{ThemeFile 'Images/bottomDropShadow.png'}"/>
     <ImageBrush x:Key="TopDropShadowBrush" ImageSource="{ThemeFile 'Images/topDropShadow.png'}"/>
@@ -106,7 +106,7 @@
     <ImageBrush x:Key="BackgroundImage" ImageSource="{ThemeFile 'Images/Background.png'}" TileMode="None" Stretch="Fill"/>
 
     <!--Extra Metadata Path values start-->
-    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">true</sys:Boolean>
-    <sys:String x:Key="ExtraMetadataPath">C:\Users\Felix\AppData\Roaming\Playnite</sys:String>
+    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">false</sys:Boolean>
+    <sys:String x:Key="ExtraMetadataPath"></sys:String>
     <!--region end-->
 </ResourceDictionary>

@@ -1,5 +1,12 @@
 AddonId: felixkmh_DesktopTheme_DH_Dawn
 Packages:
+  - Version: 2.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-05-30
+    PackageUrl: https://github.com/felixkmh/DH_Themes/releases/download/DH_DawnV2.0.0/felixkmh_DesktopTheme_DH_Dawn_2_0.pthm
+    Changelog:
+      - Updated to ThemeApiVersion 2.9.0
+      - Fixed ExplorerPanel close button (API 2.8.0)
   - Version: 1.6
     RequiredApiVersion: 2.4.0
     ReleaseDate: 2023-01-27

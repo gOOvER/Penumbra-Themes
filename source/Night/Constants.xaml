@@ -129,10 +129,10 @@
 
     <!-- Effects -->
     <sys:Double x:Key="HoverBackgroundOpacity">0.6</sys:Double>
-    <DropShadowEffect x:Key="TextDropShadow" BlurRadius="4" ShadowDepth="0" Color="Black" RenderingBias="Quality" Opacity="0.55"/>
+    <DropShadowEffect x:Key="TextDropShadow" x:Shared="False" BlurRadius="4" ShadowDepth="0" Color="Black" RenderingBias="Quality" Opacity="0.55"/>
     <sys:Double x:Key="DropShadowRadius">22</sys:Double>
     <sys:Double x:Key="DropShadowOpacity">0.75</sys:Double>
-    <DropShadowEffect x:Key="DefaultDropShadow" BlurRadius="{DynamicResource DropShadowRadius}" ShadowDepth="0" Color="Black" RenderingBias="Performance" Opacity="{DynamicResource DropShadowOpacity}"/>
+    <DropShadowEffect x:Key="DefaultDropShadow" x:Shared="False" BlurRadius="{DynamicResource DropShadowRadius}" ShadowDepth="0" Color="Black" RenderingBias="Performance" Opacity="{DynamicResource DropShadowOpacity}"/>
     <Thickness x:Key="DropShadowThickness" 
                Left="{StaticResource DropShadowRadius}" 
                Top="{StaticResource DropShadowRadius}" 
