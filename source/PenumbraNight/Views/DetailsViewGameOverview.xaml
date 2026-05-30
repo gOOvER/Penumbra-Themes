@@ -80,8 +80,12 @@
                             <Image Stretch="UniformToFill" x:Name="TopBackground"
                                                Source="{Binding Game.DisplayBackgroundImage, Converter={StaticResource ImageStringToImageConverter}}" 
                                                Margin="-20" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" StretchDirection="Both">
+                                   HorizontalAlignment="Center" StretchDirection="Both"
+                                   Visibility="{Binding IsVisible, ElementName=BackgroundChanger_PluginBackgroundImage, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
                             </Image>
+                            <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
+                                            HorizontalAlignment="Center" VerticalAlignment="Top"
+                                            Visibility="{PluginSettings Plugin=BackgroundChanger, Path=HasDataBackground, FallbackValue={x:Static Visibility.Collapsed}}"/>
                         </Border>
 
                         <ContentControl x:Name="DuplicateHider_ContentControl1" Panel.ZIndex="1"
@@ -137,16 +141,24 @@
                                               x:Name="GameCoverGrid">
                                             <Border Visibility="Visible"
                                                 HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                                <Grid>
                                                 <Image Name="PART_ImageCover" MaxWidth="220"
                                                        Height="{Settings GameDetailsCoverHeight}"
                                                        VerticalAlignment="Bottom"
                                                        StretchDirection="Both" Stretch="Uniform"
                                                        RenderOptions.BitmapScalingMode="Fant" 
-                                                       Effect="{DynamicResource DefaultDropShadow}" RenderTransformOrigin="1.0,0.6">
+                                                       Effect="{DynamicResource DefaultDropShadow}" RenderTransformOrigin="1.0,0.6"
+                                                       Visibility="{Binding IsVisible, ElementName=BackgroundChanger_PluginBackgroundImage, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
                                                     <Image.RenderTransform>
                                                         <ScaleTransform x:Name="CoverTransform"/>
                                                     </Image.RenderTransform>
                                                 </Image>
+                                                <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
+                                                                VerticalAlignment="Bottom"
+                                                                Height="{Settings GameDetailsCoverHeight}"
+                                                                RenderOptions.BitmapScalingMode="Fant"
+                                                                Visibility="{PluginSettings Plugin=BackgroundChanger, Path=HasDataCover, FallbackValue={x:Static Visibility.Collapsed}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                                </Grid>
                                             </Border>
                                         </Grid>
 
@@ -197,6 +209,15 @@
                                                             </ContentControl.LayoutTransform>
                                                         </ContentControl>
                                                     </StackPanel>
+                                                        <ContentControl x:Name="GameActivity_PluginButton"
+                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationButton, FallbackValue={x:Static Visibility.Collapsed}}"
+                                                            Margin="5,0,0,0" Height="40"/>
+                                                        <ContentControl x:Name="CheckDlc_PluginButton"
+                                                            Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue={x:Static Visibility.Collapsed}}"
+                                                            Margin="5,0,0,0" Height="40"/>
+                                                        <ContentControl x:Name="ScreenshotsVisualizer_PluginButton"
+                                                            Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationButton, FallbackValue={x:Static Visibility.Collapsed}}"
+                                                            Margin="5,0,0,0" Height="40"/>
                                                     <Button Name="PART_ButtonMoreActions"
                                                         Style="{DynamicResource ContextActionButton}"
                                                     Content="..."
@@ -715,6 +736,12 @@
                                                 <Border Style="{DynamicResource PanelBorder}">
                                                     <ContentControl x:Name="SuccessStory_PluginList" MinHeight="600" VerticalAlignment="Top"/>
                                                 </Border>
+                                            </TabItem>
+                                            <TabItem Header="{DynamicResource LOCSsvTitle}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}">
+                                                <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" VerticalAlignment="Top" />
+                                            </TabItem>
+                                            <TabItem Header="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Visibility="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}">
+                                                <ContentControl x:Name="ReviewViewer_ReviewsControl" />
                                             </TabItem>
                                         </TabControl>
                                     </DockPanel>
