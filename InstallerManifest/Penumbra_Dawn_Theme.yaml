@@ -1,0 +1,10 @@
+AddonId: Penumbra_Dawn_Theme
+Packages:
+  - Version: 1.0.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-05-30
+    PackageUrl: https://github.com/gOOvER/DH_Themes/releases/download/PenumbraDawnv1.0.0/Penumbra_Dawn_Theme_1_0_0.pthm
+    Changelog:
+      - Initial release as Penumbra Dawn (formerly DH_Dawn)
+      - Updated to ThemeApiVersion 2.9.0
+      - Fixed ExplorerPanel close button (API 2.8.0)
