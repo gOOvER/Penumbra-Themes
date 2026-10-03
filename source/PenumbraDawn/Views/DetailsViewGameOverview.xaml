@@ -1468,13 +1468,13 @@
                                                 Background="Transparent">
                                     <Border.ContextMenu>
                                         <ContextMenu 
-                                            Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Path=IsInstalled}"
+                                            Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
                                             IsOpen="{PluginSettings Plugin=ThemeExtras, Path=Menus.IsOpen, Mode=OneWayToSource, FallbackValue={StaticResource False}}">
                                             <MenuItem Header="ExtraMetadataLoader" 
-                                                      Visibility="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, Path=IsInstalled}"
+                                                      Visibility="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, Status=Installed}"
                                                       ItemsSource="{PluginSettings Plugin=ThemeExtras, Path=Menus.EMLGameMenuItems, FallbackValue={x:Null}}"/>
                                             <MenuItem Header="BackgroundChanger" 
-                                                      Visibility="{PluginStatus Plugin=playnite-backgroundchanger-plugin, Path=IsInstalled}"
+                                                      Visibility="{PluginStatus Plugin=playnite-backgroundchanger-plugin, Status=Installed}"
                                                       ItemsSource="{PluginSettings Plugin=ThemeExtras, Path=Menus.BackgroundChangerGameMenuItems, FallbackValue={x:Null}}"/>
                                             <Separator/>
                                             <MenuItem Header="{DynamicResource LOCOpenMetadataFolder}" 
@@ -1486,7 +1486,7 @@
                                               Height="{Binding ActualHeight, ElementName=OnScreenButtonsSizeProxy}"
                                               x:Name="OnScreenButtons"
                                               Effect="{StaticResource PopupDropShadow}"
-                                              Visibility="{PluginSettings IsAnyVideoAvailable, Plugin=ExtraMetadataLoader, FallbackValue={x:Static Visibility.Collapsed}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                              Visibility="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable, FallbackValue={x:Static Visibility.Collapsed}}">
                                             <Button Focusable="False" Cursor="Arrow"
                                                         RenderTransformOrigin="0.5,0.5" RenderTransform="{StaticResource UniformScaleTransform}"
                                             Background="Transparent"
