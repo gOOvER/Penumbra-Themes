@@ -358,3 +358,6 @@ MigrationBackup/
 
 # Mythos reference (not to be committed)
 _ref_mythos/
+
+scratch/
+
