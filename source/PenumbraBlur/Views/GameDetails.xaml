@@ -189,6 +189,30 @@
                                 </StackPanel>
                             </StackPanel>
 
+                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}"
+                                   DockPanel.Dock="Top" Foreground="White" Margin="0,10,0,4" />
+                            <ItemsControl Name="PART_ItemsAgeRatings" DockPanel.Dock="Top" Margin="0,0,0,10">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Margin="0,2,8,2">
+                                            <Image Height="30"
+                                                Source="{ThemeFileBinding Name, PathFormat='Images/AgeRating/{0}.png'}"
+                                                Stretch="Uniform"
+                                                Margin="0,0,4,0"
+                                                RenderOptions.BitmapScalingMode="HighQuality"
+                                                SnapsToDevicePixels="True" />
+                                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"
+                                                       Foreground="White" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" x:Name="ButtonPanel">
                                 <ButtonEx x:Name="PART_ButtonContext"
                                           Margin="2,2,2,2" BorderThickness="2" MinWidth="220" HorizontalContentAlignment="Center"

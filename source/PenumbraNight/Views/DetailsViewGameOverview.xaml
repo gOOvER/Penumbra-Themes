@@ -348,13 +348,15 @@
                                                         </ItemsControl.ItemsPanel>
                                                         <ItemsControl.ItemTemplate>
                                                             <DataTemplate>
-                                                                <Image Height="40"
-                                                                    Source="{ThemeFileBinding Name, PathFormat='Images/AgeRating/{0}.png'}"
-                                                                    Stretch="Uniform"
-                                                                    Margin="2,2,4,2"
-                                                                    ToolTip="{Binding Name}"
-                                                                    RenderOptions.BitmapScalingMode="HighQuality"
-                                                                    SnapsToDevicePixels="True" />
+                                                                <StackPanel Orientation="Horizontal" Margin="0,2,8,2">
+                                                                    <Image Height="30"
+                                                                        Source="{ThemeFileBinding Name, PathFormat='Images/AgeRating/{0}.png'}"
+                                                                        Stretch="Uniform"
+                                                                        Margin="0,0,4,0"
+                                                                        RenderOptions.BitmapScalingMode="HighQuality"
+                                                                        SnapsToDevicePixels="True" />
+                                                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
+                                                                </StackPanel>
                                                             </DataTemplate>
                                                         </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
