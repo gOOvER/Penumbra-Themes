@@ -15,7 +15,7 @@
                                                             Visibility="Collapsed" 
                                                             HorizontalAlignment="Right"
                                                             VerticalContentAlignment="Center"   
-                                                            Margin="0,0,0,0"  
+                                                            Margin="0,0,5,0"  
                                                             Opacity="0" DockPanel.Dock="Right"
                                                             Height="{Binding Height, ElementName=PART_ImageIcon, Mode=OneWay}"
                                                             RenderOptions.BitmapScalingMode="Fant"
@@ -118,6 +118,9 @@
                         </StackPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding SourceName}" Value="Playnite">
+                            <Setter TargetName="SourceText" Property="Text" Value="{Binding Game.Platforms[0].Name}"/>
+                        </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Border.Visibility" Value="Visible" TargetName="IconBackground"/>
                             <Setter Property="Border.Background" Value="{DynamicResource WindowBackgourndBrushBright}" TargetName="IconBackground"/>

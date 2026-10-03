@@ -1,7 +1,7 @@
 ThemeId: Penumbra_Dawn_Theme
 #Recommendations:
-#- AddonName: DuplicateHider
-#  AddonId: felixkmh_DuplicateHider_Plugin
+#- AddonName: DuplicateHiderNG
+#  AddonId: goover_DuplicateHiderNG_Plugin
 #  Features:
 #  - Floating SourceSelelctor
 #  - SourceSelector in DetailsList

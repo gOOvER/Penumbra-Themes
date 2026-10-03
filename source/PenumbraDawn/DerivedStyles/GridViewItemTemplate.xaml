@@ -99,7 +99,7 @@
                             <StackPanel VerticalAlignment="Bottom" Tag="{DynamicResource GridShowSourceSelector}"
                                     Visibility="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <Border HorizontalAlignment="{DynamicResource GridSourceSelectorAlignment}"  
-                                    Margin="4">
+                                    Margin="5" CornerRadius="8" Background="#60151e3d">
                                     <ContentControl x:Name="DuplicateHider_SourceSelector1" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible" MaxHeight="25"/>
                                 </Border>
                             </StackPanel>

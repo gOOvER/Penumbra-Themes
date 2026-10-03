@@ -290,7 +290,7 @@
                                     </Border>
 
                                     <DockPanel MaxWidth="{DynamicResource DetailsViewMaxContentWidth}" Grid.Row="2" x:Name="GameDetailsDockPanel">
-                                        <StackPanel DockPanel.Dock="Left" Width="300"
+                                        <StackPanel DockPanel.Dock="Left" Width="320"
                                                 Margin="2,0,0,0">
                                             <StackPanel.Resources>
                                                 <Style TargetType="ItemsControl">
@@ -316,7 +316,7 @@
                                                     <TextBlock Text="{DynamicResource LOCSuccessStoryAchievements}" DockPanel.Dock="Left"/>
                                                 </DockPanel>
                                             </Border>-->
-                                            <Border Style="{DynamicResource PanelBorder}" Margin="0,7,7,0" Padding="7,0,0,0">
+                                            <Border Background="#70101016" BorderBrush="{DynamicResource PanelSeparatorBrush}" BorderThickness="1" CornerRadius="8" Margin="0,7,10,15" Padding="14,10,14,14" VerticalAlignment="Top">
                                                 <GridEx Margin="0,5,0,10"
                                                 ColumnCount="2" StarColumns="1"
                                                 RowCount="23" AutoLayoutColumns="2">
@@ -334,7 +334,18 @@
                                                 <TextBlock Name="PART_TextCompletionStatus" VerticalAlignment="Center" />-->
 
                                                     <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
-                                                    <Button Name="PART_ButtonInstallDirectory" VerticalAlignment="Center" />
+                                                    <Button Name="PART_ButtonInstallDirectory" VerticalAlignment="Center">
+                                                        <Button.Template>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <TextBlock FontSize="{TemplateBinding FontSize}"
+                                                                           Foreground="{TemplateBinding Foreground}"
+                                                                           Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                                                                           TextWrapping="NoWrap"
+                                                                           TextTrimming="CharacterEllipsis"
+                                                                           ToolTip="{TemplateBinding Content}" />
+                                                            </ControlTemplate>
+                                                        </Button.Template>
+                                                    </Button>
 
                                                     <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
                                                     <TextBlock Name="PART_TextInstallSize" VerticalAlignment="Center" />
@@ -343,16 +354,48 @@
                                                     <Button Name="PART_ButtonLibrary" VerticalAlignment="Center" />
 
                                                     <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                    <ItemsControl Name="PART_ItemsPlatforms" />
+                                                    <ItemsControl Name="PART_ItemsPlatforms">
+                                                        <ItemsControl.Resources>
+                                                            <Style x:Key="PropertyItemButton" TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        <Style TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        </ItemsControl.Resources>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemGenres" Content="{DynamicResource LOCGenreLabel}" />
-                                                    <ItemsControl Name="PART_ItemsGenres"  />
+                                                    <ItemsControl Name="PART_ItemsGenres">
+                                                        <ItemsControl.Resources>
+                                                            <Style x:Key="PropertyItemButton" TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        <Style TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        </ItemsControl.Resources>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                    <ItemsControl Name="PART_ItemsDevelopers" />
+                                                    <ItemsControl Name="PART_ItemsDevelopers">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                    <ItemsControl Name="PART_ItemsPublishers" />
+                                                    <ItemsControl Name="PART_ItemsPublishers">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
                                                     <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
@@ -369,13 +412,43 @@
                                                     </StackPanel>
 
                                                     <Label Name="PART_ElemCategories" Content="{DynamicResource LOCGameCategoriesTitle}" />
-                                                    <ItemsControl Name="PART_ItemsCategories" />
+                                                    <ItemsControl Name="PART_ItemsCategories">
+                                                        <ItemsControl.Resources>
+                                                            <Style x:Key="PropertyItemButton" TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        <Style TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        </ItemsControl.Resources>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemFeatures" Content="{DynamicResource LOCFeaturesLabel}" />
-                                                    <ItemsControl Name="PART_ItemsFeatures" />
+                                                    <ItemsControl Name="PART_ItemsFeatures">
+                                                        <ItemsControl.Resources>
+                                                            <Style x:Key="PropertyItemButton" TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        <Style TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        </ItemsControl.Resources>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemTags" Content="{DynamicResource LOCTagsLabel}" />
-                                                    <ItemsControl Name="PART_ItemsTags" />
+                                                    <ItemsControl Name="PART_ItemsTags">
+                                                        <ItemsControl.Resources>
+                                                            <Style x:Key="PropertyItemButton" TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        <Style TargetType="Button" BasedOn="{StaticResource ChipPropertyItemButton}" />
+                                                        </ItemsControl.Resources>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
                                                     <ItemsControl Name="PART_ItemsAgeRatings">
@@ -400,13 +473,25 @@
                                                     </ItemsControl>
 
                                                     <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                    <ItemsControl Name="PART_ItemsSeries" />
+                                                    <ItemsControl Name="PART_ItemsSeries">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
                                                     <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
 
                                                     <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                    <ItemsControl Name="PART_ItemsRegions" />
+                                                    <ItemsControl Name="PART_ItemsRegions">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
 
                                                     <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
                                                     <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
@@ -433,7 +518,7 @@
                                             <TabItem Header="{DynamicResource LOCGameDescriptionTitle}" x:Name="DescriptionTab">
                                                 <StackPanel DockPanel.Dock="Right" Margin="2,0,2,0">
                                                     <Border Style="{DynamicResource PanelBorder}" Padding="4,4,4,0"
-                                                            Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue={PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}, Mode=OneWay}">
+                                                            Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={PluginSettings Plugin=SuccessStory, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}, Mode=OneWay}">
                                                         <StackPanel>
                                                             <ContentControl x:Name="PlayniteAchievements_AchievementCompactList"
                                                                             Visibility="{PluginStatus Plugin=PlayniteAchievements, Status=Installed}"/>
@@ -764,7 +849,7 @@
                                                     </Border>
                                                 </StackPanel>
                                             </TabItem>
-                                            <TabItem Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, FallbackValue={PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}, Mode=OneWay}">
+                                            <TabItem Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={PluginSettings Plugin=SuccessStory, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}, Mode=OneWay}">
                                                 <TabItem.Header>
                                                     <Grid>
                                                         <StackPanel Orientation="Horizontal">
@@ -798,20 +883,182 @@
                                                 </Border>
                                             </TabItem>
                                             <TabItem Header="DLC" Visibility="{PluginSettings Plugin=CheckDlc, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}">
-                                                <Border Style="{DynamicResource PanelBorder}">
-                                                    <ContentControl x:Name="CheckDlc_PluginListDlcAll" MinHeight="350" VerticalAlignment="Top"/>
+                                                <Border Background="#70101016" BorderBrush="{DynamicResource PanelSeparatorBrush}" BorderThickness="1" CornerRadius="8" Margin="0,5,0,10" Padding="12,10,12,10">
+                                                    <ContentControl x:Name="CheckDlc_PluginListDlcAll" Height="480" VerticalAlignment="Top">
+                                                        <ContentControl.Resources>
+                                                            <Style TargetType="{x:Type Label}">
+                                                                <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                                                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}"/>
+                                                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="Label">
+                                                                            <TextBlock Text="{TemplateBinding Content}"
+                                                                                       TextTrimming="CharacterEllipsis"
+                                                                                       VerticalAlignment="Center"
+                                                                                       Foreground="{TemplateBinding Foreground}"/>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                            <Style TargetType="{x:Type Button}">
+                                                                <Setter Property="Cursor" Value="Hand"/>
+                                                                <Setter Property="Background" Value="#25FFFFFF"/>
+                                                                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}"/>
+                                                                <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}"/>
+                                                                <Setter Property="BorderThickness" Value="1"/>
+                                                                <Setter Property="Padding" Value="7,4,7,4"/>
+                                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="Button">
+                                                                            <Border x:Name="Border"
+                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                                    Background="{TemplateBinding Background}"
+                                                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                                                    Padding="{TemplateBinding Padding}"
+                                                                                    SnapsToDevicePixels="True">
+                                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                            </Border>
+                                                                            <ControlTemplate.Triggers>
+                                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                                    <Setter TargetName="Border" Property="Background" Value="#40FFFFFF"/>
+                                                                                </Trigger>
+                                                                            </ControlTemplate.Triggers>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                            <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource {x:Type ListBox}}">
+                                                                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+                                                                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                                                                <Setter Property="Padding" Value="0"/>
+                                                                <Setter Property="BorderThickness" Value="0"/>
+                                                                <Setter Property="Background" Value="Transparent"/>
+                                                            </Style>
+                                                        </ContentControl.Resources>
+                                                    </ContentControl>
                                                 </Border>
                                             </TabItem>
                                             <TabItem Header="Languages" Visibility="{PluginSettings Plugin=CheckLocalizations, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}, Mode=OneWay}">
-                                                <Border Style="{DynamicResource PanelBorder}">
-                                                    <ContentControl x:Name="CheckLocalizations_CheckLocListLanguages" MinHeight="300" VerticalAlignment="Top"/>
+                                                <Border Background="#70101016" BorderBrush="{DynamicResource PanelSeparatorBrush}" BorderThickness="1" CornerRadius="8" Margin="0,5,0,10" Padding="14,12,14,12">
+                                                    <ContentControl x:Name="CheckLocalizations_PluginListLanguages" MinHeight="480" Height="480" VerticalAlignment="Top"/>
                                                 </Border>
                                             </TabItem>
                                             <TabItem Header="{DynamicResource LOCSsvTitle}" Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}">
-                                                <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" VerticalAlignment="Top" />
+                                                <Border Background="#70101016" BorderBrush="{DynamicResource PanelSeparatorBrush}" BorderThickness="1" CornerRadius="8" Margin="0,5,0,10" Padding="14,12,14,12">
+                                                    <StackPanel>
+                                                        <ContentControl x:Name="ScreenshotsVisualizer_PluginScreenshots" VerticalAlignment="Top"
+                                                                        Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationShowPictures, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}" />
+                                                        <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" VerticalAlignment="Top"
+                                                                        Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationShowPictures, Converter={StaticResource InvertedBooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Visible}}" />
+                                                    </StackPanel>
+                                                </Border>
                                             </TabItem>
                                             <TabItem Header="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Visibility="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}">
-                                                <ContentControl x:Name="ReviewViewer_ReviewsControl" />
+                                                <Border Background="#70101016" BorderBrush="{DynamicResource PanelSeparatorBrush}" BorderThickness="1" CornerRadius="8" Margin="0,5,0,10" Padding="16,14,16,16">
+                                                    <ContentControl x:Name="ReviewViewer_ReviewsControl">
+                                                        <ContentControl.Resources>
+                                                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+                                                                <Setter Property="Cursor" Value="Hand"/>
+                                                                <Setter Property="Background" Value="#20FFFFFF" />
+                                                                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                                                                <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}" />
+                                                                <Setter Property="BorderThickness" Value="1" />
+                                                                <Setter Property="SnapsToDevicePixels" Value="True" />
+                                                                <Setter Property="Padding" Value="10,5,10,5" />
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                                            <Border x:Name="Border"
+                                                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                                                    Background="{TemplateBinding Background}"
+                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                                                    Padding="{TemplateBinding Padding}"
+                                                                                    SnapsToDevicePixels="True"
+                                                                                    RenderTransformOrigin="0.5,0.5">
+                                                                                <Border.RenderTransform>
+                                                                                    <ScaleTransform ScaleX="1" ScaleY="1" x:Name="BorderScale"/>
+                                                                                </Border.RenderTransform>
+                                                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                                                  RecognizesAccessKey="True" />
+                                                                            </Border>
+                                                                            <ControlTemplate.Triggers>
+                                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                                    <Setter Property="Background" Value="#35FFFFFF" TargetName="Border" />
+                                                                                    <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="Border" />
+                                                                                </Trigger>
+                                                                                <Trigger Property="IsPressed" Value="True">
+                                                                                    <Setter Property="Background" Value="#50FFFFFF" TargetName="Border" />
+                                                                                </Trigger>
+                                                                            </ControlTemplate.Triggers>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                            <Style TargetType="{x:Type RadioButton}">
+                                                                <Setter Property="Cursor" Value="Hand"/>
+                                                                <Setter Property="Margin" Value="0,3,0,3"/>
+                                                                <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                                            </Style>
+                                                            <Style x:Key="SectionHeaderBorderStyle" TargetType="{x:Type Border}">
+                                                                <Setter Property="CornerRadius" Value="8,8,0,0" />
+                                                                <Setter Property="Background" Value="#15FFFFFF" />
+                                                                <Setter Property="BorderThickness" Value="0,0,0,2" />
+                                                                <Setter Property="BorderBrush" Value="{DynamicResource PanelSeparatorBrush}" />
+                                                                <Setter Property="Cursor" Value="Hand" />
+                                                                <Setter Property="SnapsToDevicePixels" Value="True" />
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="Background" Value="#25FFFFFF" />
+                                                                        <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                            <Style x:Key="SectionHeaderActivePopupBorderStyle" TargetType="{x:Type Border}">
+                                                                <Setter Property="CornerRadius" Value="8,8,0,0" />
+                                                                <Setter Property="Background" Value="#EE181822" />
+                                                                <Setter Property="BorderThickness" Value="1,1,1,0" />
+                                                                <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                                                                <Setter Property="Cursor" Value="Hand" />
+                                                                <Setter Property="SnapsToDevicePixels" Value="True" />
+                                                            </Style>
+                                                            <Style x:Key="PopupBackgroundStyle" TargetType="{x:Type Border}">
+                                                                <Setter Property="CornerRadius" Value="0,8,8,8" />
+                                                                <Setter Property="Background" Value="#EE181822" />
+                                                                <Setter Property="BorderThickness" Value="1" />
+                                                                <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                                                                <Setter Property="Padding" Value="14,10" />
+                                                                <Setter Property="SnapsToDevicePixels" Value="True" />
+                                                                <Setter Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect Color="#000000" BlurRadius="12" Opacity="0.7" ShadowDepth="4" />
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}">
+                                                                <Setter Property="Cursor" Value="Hand" />
+                                                                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                            <SolidColorBrush x:Key="PopupBackgroundBrush" Color="#EE181822" />
+                                                            <SolidColorBrush x:Key="SectionHeaderBackgroundBrush" Color="#20FFFFFF" />
+                                                        </ContentControl.Resources>
+                                                    </ContentControl>
+                                                </Border>
                                             </TabItem>
                                         </TabControl>
                                     </DockPanel>

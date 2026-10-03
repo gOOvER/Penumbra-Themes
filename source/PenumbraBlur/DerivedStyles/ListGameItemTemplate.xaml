@@ -37,8 +37,8 @@
                         </Grid>
                         <Border Background="#AA000000" x:Name="BorderDarken" Visibility="Collapsed" CornerRadius="{DynamicResource GridItemCornerRadius}" />
                         <StackPanel VerticalAlignment="Bottom">
-                            <Border Background="#34000000" CornerRadius="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,5,5,5" >
-                                <ContentControl x:Name="DuplicateHider_SourceSelector" Margin="3,3,3,3" HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxHeight="30"/>
+                            <Border Background="#40000000" CornerRadius="8" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5">
+                                <ContentControl x:Name="DuplicateHider_SourceSelector" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxHeight="30" RenderOptions.BitmapScalingMode="Fant"/>
                             </Border>
                             <TextBlock x:Name="BottomText" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis"
                                        Visibility="{Settings Fullscreen.ShowGameTitles}"

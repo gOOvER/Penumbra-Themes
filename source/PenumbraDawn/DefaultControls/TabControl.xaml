@@ -141,34 +141,37 @@
                                                             Storyboard.TargetName="SelectedBorder" Storyboard.TargetProperty="Margin"/>
                         </Storyboard>
                     </ControlTemplate.Resources>
-                    <Grid x:Name="TabGrid" Focusable="False">
-                        <Border x:Name="HoverBorder" Visibility="Visible" Focusable="False"
-                                SnapsToDevicePixels="True"
-                                BorderThickness="0,0,0,2" 
-                                Margin="{Binding Margin, ElementName=SelectedBorder}" 
-                                BorderBrush="{DynamicResource GlyphBrush}"
-                                RenderTransformOrigin="0.5,1">
-                            <Border.RenderTransform>
-                                <ScaleTransform ScaleY="0"/>
-                            </Border.RenderTransform>
-                        </Border>
-                        <Border x:Name="SelectedBorder" Visibility="Collapsed" Margin="12,0,12,0"
-                                SnapsToDevicePixels="True"
-                                BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}"
-                                Focusable="False"/>
-                        <TextBlock x:Name="TextContent" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
-                                   Foreground="{TemplateBinding Foreground}"
-                                   Focusable="False">
-                            <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="True" ContentSource="Header"
-                                              HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" 
-                                              Focusable="False"/>
-                        </TextBlock>
-                    </Grid>
+                    <Border x:Name="TabGrid" Focusable="False" CornerRadius="8,8,0,0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Border x:Name="HoverBorder" Visibility="Visible" Focusable="False"
+                                    SnapsToDevicePixels="True"
+                                    BorderThickness="0,0,0,2" 
+                                    Margin="{Binding Margin, ElementName=SelectedBorder}" 
+                                    BorderBrush="{DynamicResource GlyphBrush}"
+                                    RenderTransformOrigin="0.5,1">
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleY="0"/>
+                                </Border.RenderTransform>
+                            </Border>
+                            <Border x:Name="SelectedBorder" Visibility="Collapsed" Margin="12,0,12,0"
+                                    SnapsToDevicePixels="True"
+                                    BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}"
+                                    Focusable="False"/>
+                            <TextBlock x:Name="TextContent" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Focusable="False">
+                                <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="True" ContentSource="Header"
+                                                  HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" 
+                                                  Focusable="False"/>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="TabStripPlacement" Value="Left">
                             <Setter Property="BorderThickness" Value="0,0,2,0" TargetName="SelectedBorder" />
                             <Setter Property="BorderThickness" Value="0,0,2,0" TargetName="HoverBorder" />
                             <Setter Property="Margin" Value="0,6,0,6" TargetName="SelectedBorder" />
+                            <Setter Property="CornerRadius" Value="8,0,0,8" TargetName="TabGrid" />
                             <Setter Property="RenderTransformOrigin" TargetName="HoverBorder" Value="1,0.5"/>
                             <Setter Property="RenderTransform" TargetName="HoverBorder">
                                 <Setter.Value>
@@ -180,6 +183,7 @@
                             <Setter Property="BorderThickness" Value="2,0,0,0" TargetName="SelectedBorder" />
                             <Setter Property="BorderThickness" Value="2,0,0,0" TargetName="HoverBorder" />
                             <Setter Property="Margin" Value="0,6,0,6" TargetName="SelectedBorder" />
+                            <Setter Property="CornerRadius" Value="0,8,8,0" TargetName="TabGrid" />
                             <Setter Property="RenderTransformOrigin" TargetName="HoverBorder" Value="0,0.5"/>
                             <Setter Property="RenderTransform" TargetName="HoverBorder">
                                 <Setter.Value>
@@ -190,6 +194,7 @@
                         <Trigger Property="TabStripPlacement" Value="Bottom">
                             <Setter Property="BorderThickness" Value="0,2,0,0" TargetName="SelectedBorder" />
                             <Setter Property="BorderThickness" Value="0,2,0,0" TargetName="HoverBorder" />
+                            <Setter Property="CornerRadius" Value="0,0,8,8" TargetName="TabGrid" />
                             <Setter Property="RenderTransformOrigin" TargetName="HoverBorder" Value="0.5,0"/>
                         </Trigger>
                         <MultiTrigger>
@@ -301,6 +306,7 @@
                             <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="TabGrid" Property="Background" Value="{DynamicResource ControlHoverBrush}"/>
                             <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
                         </Trigger>

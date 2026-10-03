@@ -142,7 +142,7 @@
                             <TextBlock Text="&#xeea3;" FontFamily="{DynamicResource FontIcoFont}" FontSize="24"
                                        Foreground="{TemplateBinding Foreground}"
                                        HorizontalAlignment="Center"/>
-                            <Border CornerRadius="3" Width="15" Height="15"
+                            <Border CornerRadius="7.5" Width="15" Height="15"
                                     Margin="20,0,0,0" Background="OrangeRed"
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                 <TextBlock Text="{Api Notifications.Count}" FontSize="12"

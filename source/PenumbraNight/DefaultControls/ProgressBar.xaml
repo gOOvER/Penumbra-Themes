@@ -35,7 +35,7 @@
                                             </Rectangle.LayoutTransform>
                                         </Rectangle>
                                         <Border Background="{TemplateBinding Foreground}" Grid.Column="1"
-                                                   CornerRadius="5"></Border>
+                                                   CornerRadius="{DynamicResource ControlCornerRadius}"></Border>
                                         <Rectangle Fill="{x:Null}" HorizontalAlignment="Right" Width="{Binding ActualWidth, ElementName=Placeholder}"
                                                    RenderTransformOrigin="1, 0" Grid.Column="3">
                                             <Rectangle.LayoutTransform>

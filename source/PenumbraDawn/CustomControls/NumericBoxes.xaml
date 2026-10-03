@@ -6,7 +6,7 @@
                 Background="{DynamicResource TextBoxBrush}"
                 Style="{DynamicResource HighlightBorder}"
                 BorderThickness="0,0,0,1"
-                CornerRadius="5"
+                CornerRadius="{DynamicResource ControlCornerRadius}"
                 BorderBrush="{DynamicResource UserEditableBoxBrush}">
             <ScrollViewer x:Name="PART_ContentHost"
                           VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}"

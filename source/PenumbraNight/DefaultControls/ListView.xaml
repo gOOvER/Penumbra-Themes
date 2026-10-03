@@ -11,14 +11,17 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="ToolTip" Value="{Binding Content, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
                     <Grid Margin="1">
-                        <Border Padding="5,3,5,3" Style="{DynamicResource HighlightBorder}" BorderThickness="1" Background="Transparent">
-                            <TextBlock Style="{DynamicResource BaseTextBlockStyle}">
-                                <ContentPresenter VerticalAlignment="Center" />
-                            </TextBlock>
+                        <Border x:Name="HeaderBorder" Padding="4,3,4,3" Style="{DynamicResource HighlightBorder}" BorderThickness="1" Background="Transparent">
+                            <Viewbox Stretch="Uniform" StretchDirection="DownOnly" MaxHeight="18">
+                                <TextBlock Style="{DynamicResource BaseTextBlockStyle}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" />
+                                </TextBlock>
+                            </Viewbox>
                         </Border>
                         <Thumb x:Name="PART_HeaderGripper" HorizontalAlignment="Right" Margin="0,0,-10,0">
                             <Thumb.Style>
@@ -38,6 +41,12 @@
                             </Thumb.Style>
                         </Thumb>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Role" Value="Padding">
+                            <Setter TargetName="HeaderBorder" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_HeaderGripper" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -117,25 +126,26 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="0,1,0,1" />
+        <Setter Property="Padding" Value="0,3,0,3" />
+        <Setter Property="MinHeight" Value="32" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
                     <Grid>
-                        <Rectangle x:Name="HoverRectangle" Visibility="Collapsed" Fill="{DynamicResource HoverBrush}" />
-                        <Rectangle x:Name="SelectedRectangle" Visibility="Collapsed" Fill="{DynamicResource GlyphBrush}" />
+                        <Border x:Name="HoverBorder" Visibility="Collapsed" Background="{DynamicResource HoverBrush}" CornerRadius="{DynamicResource ControlCornerRadius}" />
+                        <Border x:Name="SelectedBorder" Visibility="Collapsed" Background="{DynamicResource GlyphBrush}" Opacity="0.25" CornerRadius="{DynamicResource ControlCornerRadius}" />
                         <Border Padding="{TemplateBinding Padding}" Background="Transparent">
-                            <GridViewRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch" />
+                            <GridViewRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Selector.IsSelected" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedRectangle" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="HoverRectangle" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="HoverBorder" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

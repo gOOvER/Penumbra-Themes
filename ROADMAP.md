@@ -11,7 +11,7 @@ flowchart TD
     M1[Milestone 1: Media Pipeline & Dynamic Artwork<br/>ImageRotater & BackgroundChanger] --> M2[Milestone 2: Deep Telemetry & Modern Achievements<br/>GameActivity & PlayniteAchievements]
     M2 --> M3[Milestone 3: Deep Game Intelligence Hub<br/>CheckDLC, CheckLocalizations & SystemChecker]
     M3 --> M4[Milestone 4: Customization & Rich Content Presentation<br/>ThemeModifier, HLTB & DescriptionEditor CSS]
-    M4 --> M5[Milestone 5: Ecosystem Synergy & Layout Polish<br/>SCVerse, DuplicateHiderNG & Fullscreen Blur]
+    M4 --> M5[Milestone 5: Ecosystem Synergy & Layout Polish<br/>SCVerse, DuplicateHider & Fullscreen Blur]
 ```
 
 ---
@@ -88,7 +88,7 @@ Transforming the Details View into a rich intelligence hub by integrating DLC ma
 | **CheckDLC** | `CheckDlc_PluginListDlcAll` | Dedicated DLC Expander Tab | Details View Tabs |
 | **CheckDLC** | `CheckDlc_PluginButton` | DLC Manager Button | Quick Action Bar |
 | **CheckLocalizations** | `CheckLocalizations_PluginFlags` | Supported language flag icons row | Details Metadata Header |
-| **CheckLocalizations** | `CheckLocalizations_CheckLocListLanguages` | Full language support matrix (Audio/Sub/UI) | Details Expander Tab / Modal |
+| **CheckLocalizations** | `CheckLocalizations_PluginListLanguages` | Full language support matrix (Audio/Sub/UI) | Details Expander Tab / Modal |
 | **CheckLocalizations** | `CheckLocalizations_PluginButton` | Localization Manager Button | Quick Action Bar |
 | **SystemChecker** | `SystemChecker_PluginButton` | Hardware check launcher | Quick Action Bar |
 | **SystemChecker** | `IsAllOK` / `IsMinimumOK` / `RecommandedStorage` | Visual compatibility badge / drive requirement | System Requirements section |
@@ -102,7 +102,7 @@ Transforming the Details View into a rich intelligence hub by integrating DLC ma
 
 2. **CheckLocalizations Flags & Language Support**:
    - [x] Embed `<ContentControl x:Name="CheckLocalizations_PluginFlags" VerticalAlignment="Center" Margin="0,0,8,0"/>` in the metadata banner for immediate visual language availability.
-   - [x] Add `CheckLocalizations_CheckLocListLanguages` into an info tab with stylized columns for Audio, Interface, and Subtitles.
+   - [x] Add `CheckLocalizations_PluginListLanguages` into an info tab with stylized columns for Audio, Interface, and Subtitles.
    - [x] Add `CheckLocalizations_PluginButton` to the quick launcher toolstrip.
 
 3. **SystemChecker Status Indicators**:
@@ -143,20 +143,32 @@ Refining user configurability through ThemeModifier, standardizing HowLongToBeat
    - [ ] Display active pilot callsign and current PU shard in Game Details header for Star Citizen.
 
 2. **ScreenshotsVisualizer Gallery Expansion**:
-   - [ ] Provide toggle between vertical column (`PluginListScreenshotsVertical`) and horizontal responsive grid (`PluginScreenshots`).
+   - [x] Provide toggle between vertical column (`PluginListScreenshotsVertical`) and horizontal responsive grid (`PluginScreenshots`).
    - [ ] Integrate single screenshot viewer modal triggered by click.
 
 3. **Penumbra Blur (Fullscreen) Modernization**:
    - [x] Deepen ThemeModifier variable presets for adjustable blur radius, background tint, and font scaling.
-   - [ ] Integrate compact controller-navigable status badges for HLTB and Achievements.
+   - [x] Integrate compact controller-navigable status badges for HLTB and Achievements.
 
-4. **DuplicateHiderNG Support**:
-   - [ ] Optimize source-badge priority display across all views.
-   - [ ] Custom group badge rendering with streamlined margins.
+4. **DuplicateHider Support**:
+   - [x] Optimize source-badge priority display across all views.
+   - [x] Custom group badge rendering with streamlined margins.
+
+5. **Details View Ergonomics & Chip Badges**:
+   - [x] Horizontal Chip Badges (`ChipPropertyItemButton`) with responsive `WrapPanel` flow for Features, Tags, Categories, Genres, Platforms, Series, and Regions (saving ~70% vertical height).
+   - [x] Single-line install directory path with character ellipsis truncation and full path inspection tooltip.
+   - [x] Expanded details column width to 320px for optimal horizontal chip flow and balanced proportions against the description area.
 
 ---
 
 ## 📅 Target Release Schedule
+
+- **v1.4.0 (Ergonomics, Unified Corner Curvature & Glass Presentation)**:
+  - **Details Sidebar Card & Ergonomics**: Enclosed sidebar within dark frosted-glass container card eliminating wallpaper bleed-through, expanded width to 330px, horizontal `WrapPanel` chip layout for multi-item properties, and single-line path truncation with tooltip.
+  - **Theme-Wide 8px Curvature**: Standardized 8px rounded corners across base controls, TabItem headers with directional triggers, chip badges, top bar filter toggles, notification pills, and PlayButton dropdowns.
+  - **ScreenshotsVisualizer & ReviewViewer Integration**: Dual-mode gallery/list container card for ScreenshotsVisualizer and frosted-glass presentation card for ReviewViewer with theme-styled action controls.
+  - **CheckDlc Single-Scroll Fix**: Consolidated triple-list into a single 480px card container eliminating severe text clipping and nested scrollbars.
+  - **Penumbra Blur Fullscreen Polish**: Embedded HLTB & Achievements status badges into header row and added controller D-pad navigable focusable buttons to the action bar.
 
 - **v1.3.0 (All-in-One Major Release)**:
   - **Milestone 1**: Dynamic Media Pipeline (`ImageRotater` Cover & Background + `BackgroundChanger` synergy).

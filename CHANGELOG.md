@@ -7,6 +7,67 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-10-03
+
+### Added
+- **ScreenshotsVisualizer Dual-Support & Card Container**:
+  - Implemented dual-mode support for both horizontal gallery (`ScreenshotsVisualizer_PluginScreenshots`) and vertical list (`ScreenshotsVisualizer_PluginListScreenshotsVertical`) in the "Screenshots" expander tab across Penumbra Dawn and Penumbra Night, automatically toggling based on user plugin configuration (`EnableIntegrationShowPictures`).
+  - Enclosed the screenshots presentation within a dark frosted-glass container card (`#70101016` background, `PanelSeparatorBrush` border, and rounded 8px corners) matching the DLC, Languages, and Reviews tabs.
+- **Penumbra Blur Fullscreen Status Badges & Controller Navigation**:
+  - Embedded compact status badges for HowLongToBeat (`HowLongToBeat_PluginProgressBar`) and Achievements (`PlayniteAchievements_AchievementProgressBar` with fallback to `SuccessStory_PluginProgressBar`) into the metadata header row in Penumbra Blur fullscreen mode.
+  - Injected controller-navigable focusable buttons (`PlayniteAchievements_AchievementButton`, `SuccessStory_PluginButton`) into the action bar (`ButtonPanel`), allowing smooth D-pad controller navigation alongside Play, Options, and Context actions.
+  - Standardized rounded 8px corner radius (`ControlCornerRadius`) for fullscreen buttons and focus highlight rings.
+- **DuplicateHider & Source-Badge Polish**:
+  - Streamlined source-badge margins, padding, and alignment across Grid, Details, and Fullscreen views (`Margin="5"`, `RenderOptions.BitmapScalingMode="Fant"`).
+  - Added frosted pill background (`CornerRadius="8"`) to source selector containers in Grid and List views for crisp legibility over bright game covers.
+  - Added platform name fallback trigger in Penumbra Night for emulated games where the source is "Playnite" so the platform badge displays cleanly.
+  - Added max icon limit resource keys (`DuplicateHider_MaxNumberOfIcons`, `DuplicateHider_MaxNumberOfIcons1`, `DuplicateHider_MaxNumberOfIcons2`) in Penumbra Dawn to prevent badge overflow on game covers.
+  - Made DuplicateHider launch buttons in Penumbra Blur fullscreen mode rounded and focusable via controller.
+- **Horizontal Chip Badges (`ChipPropertyItemButton`)**: Replaced the vertical list layout for game metadata (Features, Tags, Categories, Genres, Platforms, Series, Regions) with modern horizontal wrap chips:
+  - Multi-item properties now render using `WrapPanel`, allowing items to flow horizontally side-by-side rather than stacking vertically, reducing vertical height by up to 70%.
+  - Semi-translucent badge container with rounded 4px corners, subtle border, and responsive hover/pressed states.
+  - Safe truncation (`CharacterEllipsis`) and tooltip inspection on long tag names to prevent column overflow.
+
+### Changed
+- **Details Sidebar Layout & Presentation Card**:
+  - Enclosed the entire Details sidebar within a dark frosted-glass container card (`#70101016` background with `PanelSeparatorBrush` border and rounded 8px corners) across Penumbra Dawn and Penumbra Night, eliminating text clashing and bleed-through from bright or complex game background wallpapers (such as weather charts or UI art).
+  - Explicitly bound `x:Key="PropertyItemButton"` within all metadata `ItemsControl` resources, ensuring Playnite's internal button factories properly receive the `ChipPropertyItemButton` styling (with rounded borders, margins, padding, and hover states) rather than plain text.
+  - Increased details column width to 330px for comfortable horizontal chip flow and balanced proportions against the tabbed description area.
+  - Formatted `PART_ButtonInstallDirectory` to single-line with `TextTrimming="CharacterEllipsis"` and full path tooltip on hover, preventing file paths from breaking into multiple messy lines.
+  - Increased content grid left margin in Penumbra Dawn from 20px to 70px, providing 20px of clean negative space after the 50px floating action toolbar (Play, Edit, Achievements, GameActivity, HLTB) and preventing the toolbar from overlapping the Details sidebar across all games.
+  - Wrapped multi-developer and multi-publisher lists with horizontal `WrapPanel` and proper right margins for cleaner alignment.
+- **ReviewViewer ("Bewertungen") Theme Integration**:
+  - Enclosed the reviews tab (`ReviewViewer_ReviewsControl`) inside a dark frosted-glass container card (`#70101016` background, `PanelSeparatorBrush` border, and rounded 8px corners) across Penumbra Dawn and Penumbra Night, preventing reviews and author text from floating bare over background wallpapers.
+  - Injected modern rounded button styles (`CornerRadius="{DynamicResource ControlCornerRadius}"`, subtle glass background, responsive hover scaling, and glyph highlights) for action buttons, pagination controls, and filter tags within the reviews interface.
+  - Defined fallback tab-style resources (`CornerRadius="8,8,0,0"`, glass backgrounds, and accent underlines) ready for future upstream or dynamic extension theming.
+- **Theme-Wide Rounded Corner Radius Consistency**:
+  - Upgraded base `ControlCornerRadius` and `InputCornerRadius` from 5px to 8px in `Constants.xaml` for Penumbra Night, bringing smooth, modern rounded geometry to all Buttons, ToggleButtons, TextBoxes, ComboBoxes, and control borders across the entire theme.
+  - Converted `TabItem` header containers (`TabGrid`) from sharp rectangular `Grid` to `Border` with `CornerRadius="8,8,0,0"` in both Penumbra Dawn and Penumbra Night (`TabControl.xaml`), ensuring active and hovered tabs render with sleek rounded top corners rather than square edges.
+  - Added directional `CornerRadius` triggers (`8,0,0,8`, `0,8,8,0`, `0,0,8,8`) for left, right, and bottom tab strip placements.
+  - Upgraded `ChipPropertyItemButton` badge corner radius from 4px to 8px in both Penumbra Dawn and Penumbra Night for sleek pill badges.
+  - Rounded top bar filter toggles (`ControlCornerRadius`) and converted notification count badges to smooth circular pills (7.5px radius) across Dawn and Night.
+  - Updated PlayButton extra options dropdown container and selection highlights to rounded 8px corners.
+  - Updated `TextBox`, `FilterSelectionBox`, and `NumericBoxes` to dynamically bind to `ControlCornerRadius`.
+- **CheckDlc Tab Single-Scroll & Text Clipping Fix**:
+  - Replaced stacked triple-control setup (`MinHeight="720"` x 3) with a single, dedicated card container hosting `CheckDlc_PluginListDlcAll` constrained to `Height="480"` with rounded 8px corners across Penumbra Dawn and Penumbra Night.
+  - Fixed duplicate double scrollbar defect by keeping the DLC tab within standard viewport height so only the DLC list scrolls internally while the outer page scrollbar remains deactivated.
+  - Injected `Label` text trimming (`TextTrimming="CharacterEllipsis"`), rounded button styling (`CornerRadius="{DynamicResource ControlCornerRadius}"`), and `ScrollViewer.HorizontalScrollBarVisibility="Disabled"` into `CheckDlc_PluginListDlcAll.Resources` so long DLC titles never push the ownership status ("Im Besitz") and store link button off-screen into the vertical scrollbar.
+- **CheckLocalizations Languages Tab Integration & Layout Polish**:
+  - Corrected the `ContentControl` name in the "Languages" tab from `CheckLocalizations_CheckLocListLanguages` to `CheckLocalizations_PluginListLanguages` across Penumbra Dawn and Penumbra Night to match the control identifier registered by CheckLocalizations.dll, resolving the issue where the Languages tab rendered blank.
+  - Set explicit `MinHeight="480"` alongside `Height="480"` on `CheckLocalizations_PluginListLanguages`, overriding the plugin's internal 140px height constraint and eliminating the empty black void beneath the table to display 12+ rows cleanly.
+  - Enhanced `GridViewColumnHeader` styling in `ListView.xaml`: wrapped column header content with `Viewbox Stretch="Uniform" StretchDirection="DownOnly"` so long localized headers like German "Benutzeroberfläche" automatically scale down to fit within the 80px column width without clipping into "Benutzerol", and added full-title tooltip on hover.
+  - Collapsed the empty filler header when `Role="Padding"` so the unused space to the right of columns no longer displays an awkward stretched pill border.
+  - Upgraded `ListViewItem` row styling with rounded 8px selection and hover borders (`CornerRadius="{DynamicResource ControlCornerRadius}"`), comfortable 32px minimum height, and transparent baseline background.
+  - Enclosed the language matrix within a dark frosted-glass container card (`#70101016` background, `PanelSeparatorBrush` border, and rounded 8px corners) with smooth internal scrolling.
+- **Widescreen Content Width Expansion (`DetailsViewMaxContentWidth`)**:
+  - Increased `DetailsViewMaxContentWidth` from the legacy 1024px constraint to 1600px in `Constants.xaml` across Penumbra Night and Penumbra Dawn, eliminating large empty/cutoff areas on widescreen displays (1080p, 1440p, 4K) and giving descriptions and plugin tabs generous horizontal space.
+
+### Fixed
+- **Empty Tab Gap & Header Clipping Between Description & Activity**:
+  - Fixed an issue where the Achievements tab remained visible as an empty ghost tab for games without achievements (such as *Foundry*) due to a missing `BooleanToVisibilityConverter` on its `Visibility` binding in both Penumbra Dawn and Penumbra Night.
+  - Bound the Notes tab in Penumbra Dawn to `Game.Notes` using `StringNullOrEmptyToVisibilityConverter`, ensuring it collapses completely when a game has no notes instead of showing an empty tab.
+  - Eliminated the wide empty gap between "Beschreibung" and "Activity" tabs and prevented adjacent tab headers from being cramped or clipped.
+
 ## [1.3.0] - 2026-10-03
 
 ### Added

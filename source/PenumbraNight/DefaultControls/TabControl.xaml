@@ -99,42 +99,42 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
-                    <Grid x:Name="TabGrid">
-                        <Border x:Name="SelectedBorder" Visibility="Collapsed" Margin="1,0,1,0"
-                                SnapsToDevicePixels="True"
-                                BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}"/>
-                        <TextBlock x:Name="TextContent" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
-                                   Foreground="{TemplateBinding Foreground}">
-                            <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="True" ContentSource="Header"
-                                              HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" />
-                        </TextBlock>
-                    </Grid>
+                    <Border x:Name="TabGrid" CornerRadius="8,8,0,0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Border x:Name="SelectedBorder" Visibility="Collapsed" Margin="1,0,1,0"
+                                    SnapsToDevicePixels="True"
+                                    BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}"/>
+                            <TextBlock x:Name="TextContent" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
+                                       Foreground="{TemplateBinding Foreground}">
+                                <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="True" ContentSource="Header"
+                                                  HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" />
+                            </TextBlock>
+                        </Grid>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="TabStripPlacement" Value="Left">
                             <Setter Property="BorderThickness" Value="0,0,2,0" TargetName="SelectedBorder" />
+                            <Setter Property="CornerRadius" Value="8,0,0,8" TargetName="TabGrid" />
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Right">
                             <Setter Property="BorderThickness" Value="2,0,0,0" TargetName="SelectedBorder" />
+                            <Setter Property="CornerRadius" Value="0,8,8,0" TargetName="TabGrid" />
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Bottom">
                             <Setter Property="BorderThickness" Value="0,2,0,0" TargetName="SelectedBorder" />
+                            <Setter Property="CornerRadius" Value="0,0,8,8" TargetName="TabGrid" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" TargetName="TextContent"/>
+                            <Setter TargetName="TabGrid" Property="Background" Value="#25FFFFFF"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="False">
                             <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
-                            <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
-                        </Trigger>
-                        <!--<Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
-                            <Setter Property="BorderThickness" Value="1,1,1,1" TargetName="SelectedBorder" />
-                            <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
-                        </Trigger>-->
-                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="TabGrid" Property="Background" Value="#15FFFFFF"/>
                             <Setter Property="Visibility" Value="Visible" TargetName="SelectedBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="TextContent"/>
                         </Trigger>

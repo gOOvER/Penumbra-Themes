@@ -4,7 +4,7 @@
 
     <ControlTemplate x:Key="FilterSelectionBoxTemplate" TargetType="{x:Type FilterSelectionBoxBase}">
         <Border BorderThickness="0,0,0,1"
-                CornerRadius="5"
+                CornerRadius="{DynamicResource ControlCornerRadius}"
                 Style="{DynamicResource HighlightBorder}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{DynamicResource UserEditableBoxBrush}"

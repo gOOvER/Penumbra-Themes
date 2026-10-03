@@ -182,7 +182,7 @@
                     <StackPanel Orientation="Vertical" Visibility="{Binding MoreThanOneCopy, Converter={StaticResource BooleanToVisibilityConverter}}" Width="38">
                         <Grid>
                             <Border Background="{DynamicResource TransparentButtonBrush}" x:Name="ButtonBorder"
-                                    BorderThickness="{DynamicResource ControlBorderThickness}" CornerRadius="0,5,5,0" Margin="-5,0,0,0" Width="38">
+                                    BorderThickness="{DynamicResource ControlBorderThickness}" CornerRadius="0,8,8,0" Margin="-5,0,0,0" Width="38">
                                     <ToggleButton 
                                         x:Name="Toggler" 
                                         Style="{DynamicResource ExpanderDownHeaderStyle2}" 
@@ -192,7 +192,7 @@
                                         >
                                     </ToggleButton>
                             </Border>
-                            <Border Visibility="Hidden" x:Name="HighlightBorder" Background="White" Opacity="0.15" CornerRadius="0,5,5,0" Margin="-5,0,0,0" Width="38" IsHitTestVisible="False"/>
+                            <Border Visibility="Hidden" x:Name="HighlightBorder" Background="White" Opacity="0.15" CornerRadius="0,8,8,0" Margin="-5,0,0,0" Width="38" IsHitTestVisible="False"/>
                         </Grid>
                         <Popup x:Name="PlayOptions" Width="Auto"
                                IsOpen="{Binding IsChecked, ElementName=Toggler, Delay=150}"
@@ -207,7 +207,7 @@
                             <Border Background="{DynamicResource ButtonOpaqueBrush}"
                                     Effect="{DynamicResource DefaultDropShadow}"
                                     Margin="{DynamicResource DropShadowThickness}" 
-                                    CornerRadius="0,0,5,5"
+                                    CornerRadius="0,0,8,8"
                                     MinWidth="185"
                                     MaxWidth="370"
                                     x:Name="Background">
@@ -239,7 +239,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <Border x:Name="SelectionBorder" 
                                                             OpacityMask="{DynamicResource LeftFadingBrush}"
-                                                            CornerRadius="5" Grid.ColumnSpan="2"/>
+                                                            CornerRadius="8" Grid.ColumnSpan="2"/>
                                                     <Image
                                                         Height="20"
                                                         Width="20"

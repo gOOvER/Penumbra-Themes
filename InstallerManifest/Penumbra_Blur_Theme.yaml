@@ -1,5 +1,14 @@
 AddonId: Penumbra_Blur_Theme
 Packages:
+  - Version: 1.4.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-10-03
+    PackageUrl: https://github.com/gOOvER/Penumbra-Themes/releases/download/PenumbraBlurv1.4.0/Penumbra_Blur_Theme_1_4_0.pthm
+    Changelog:
+      - Embedded compact HowLongToBeat and Achievements status badges in metadata header row
+      - Injected controller-navigable focusable buttons (PlayniteAchievements and SuccessStory) into action bar
+      - Standardized rounded 8px corner radius for fullscreen buttons and focus highlight rings
+      - Made DuplicateHider launch buttons in fullscreen mode rounded and focusable via controller
   - Version: 1.3.0
     RequiredApiVersion: 2.9.0
     ReleaseDate: 2026-10-03

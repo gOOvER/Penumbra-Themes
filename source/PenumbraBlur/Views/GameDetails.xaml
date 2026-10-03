@@ -226,6 +226,28 @@
                                     <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
                                                Text="{Binding Platforms, Converter={StaticResource ListToStringConverter}}" />
                                 </StackPanel>
+
+                                <StackPanel Margin="50,0,0,0"
+                                            Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={PluginSettings Plugin=SuccessStory, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}}">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
+                                               Text="{DynamicResource LOCAchievements_Title}"
+                                               FallbackValue="Achievements"
+                                               Margin="0,0,0,10" />
+                                    <ContentControl x:Name="PlayniteAchievements_AchievementProgressBar" MaxHeight="28"
+                                                    Visibility="{PluginStatus Plugin=PlayniteAchievements, Status=Installed}"/>
+                                    <ContentControl x:Name="SuccessStory_PluginProgressBar" MaxHeight="28"
+                                                    Visibility="{PluginStatus Plugin=PlayniteAchievements, Path=IsInstalled, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="50,0,0,0"
+                                            Visibility="{PluginSettings Plugin=HowLongToBeat, Path=HasData, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue={x:Static Visibility.Collapsed}}">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
+                                               Text="HLTB"
+                                               Margin="0,0,0,10" />
+                                    <ContentControl x:Name="HowLongToBeat_PluginProgressBar" MaxHeight="28" MaxWidth="280"/>
+                                </StackPanel>
                             </StackPanel>
 
                             <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}"
@@ -263,6 +285,13 @@
                                           Background="{DynamicResource ButtonDefaultBrush}"/>
 
 
+
+                                <ContentControl x:Name="PlayniteAchievements_AchievementButton" Focusable="True"
+                                                Visibility="{PluginSettings Plugin=PlayniteAchievements, Path=EnableIntegrationButton, FallbackValue={x:Static Visibility.Collapsed}}"
+                                                Margin="5,2,2,2" Height="{Binding ActualHeight, ElementName=PART_ButtonContext}"/>
+                                <ContentControl x:Name="SuccessStory_PluginButton" Focusable="True"
+                                                Visibility="{PluginStatus Plugin=PlayniteAchievements, Path=IsInstalled, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"
+                                                Margin="5,2,2,2" Height="{Binding ActualHeight, ElementName=PART_ButtonContext}"/>
 
                                 <ContentControl x:Name="DuplicateHider_ContentControl" Focusable="False" Height="{Binding ActualHeight, ElementName=PART_ButtonContext}">
                                     <ContentControl.Tag>

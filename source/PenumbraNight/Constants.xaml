@@ -9,7 +9,7 @@
     <Visibility x:Key="TitleVisibility">Visible</Visibility>
     <sys:Double x:Key="DetailsViewImageHeight">300</sys:Double>
     <Visibility x:Key="TopSourceSelectorVisibility">Visible</Visibility>
-    <sys:Double x:Key="DetailsViewMaxContentWidth">1024</sys:Double>
+    <sys:Double x:Key="DetailsViewMaxContentWidth">1600</sys:Double>
     <sys:Boolean x:Key="EnableCoverZoom">False</sys:Boolean>
     <sys:Boolean x:Key="UseFakeShadowInGridView">True</sys:Boolean>
     <sys:Double x:Key="DropShadowOpacityGrid">1</sys:Double>
@@ -27,11 +27,11 @@
     <Thickness x:Key="PopupBorderThickness">0</Thickness>
     <Thickness x:Key="ControlBorderThickness">0</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">0</sys:Double>
-    <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
     <Thickness x:Key="InputBorderThickness">0,0,0,2</Thickness>
     <CornerRadius x:Key="GridItemCornerRadius">10</CornerRadius>
-    <CornerRadius x:Key="InputCornerRadius">5</CornerRadius>
+    <CornerRadius x:Key="InputCornerRadius">8</CornerRadius>
 
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>

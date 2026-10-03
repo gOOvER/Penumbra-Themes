@@ -16,7 +16,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TopPanelItem}">
                     <Border x:Name="Border" BorderThickness="0" Background="{TemplateBinding Background}"
-                            CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}">
+                            CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{TemplateBinding BorderBrush}">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" />

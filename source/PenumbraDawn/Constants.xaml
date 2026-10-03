@@ -22,6 +22,7 @@
     <sys:Boolean x:Key="GridViewDropShadow">False</sys:Boolean>
     <sys:Boolean x:Key="ShowNavigationButtons">True</sys:Boolean>
     <Visibility x:Key="GridViewStatusBanner">Visible</Visibility>
+    <sys:Double x:Key="DetailsViewMaxContentWidth">1600</sys:Double>
 
     <!--ThemeExtras-->
     <sys:Boolean x:Key="EnableFloatingRating">True</sys:Boolean>
@@ -29,6 +30,9 @@
     <sys:Boolean x:Key="GridViewShowCommunityRating">False</sys:Boolean>
     
     <!--DuplicateHider-->
+    <sys:Int32 x:Key="DuplicateHider_MaxNumberOfIcons">4</sys:Int32>
+    <sys:Int32 x:Key="DuplicateHider_MaxNumberOfIcons1">8</sys:Int32>
+    <sys:Int32 x:Key="DuplicateHider_MaxNumberOfIcons2">8</sys:Int32>
     <sys:Boolean x:Key="EnableFloatingSourceSelector">True</sys:Boolean>
     <sys:Boolean x:Key="ShowDuplicateHiderInDetailsList">True</sys:Boolean>
     <HorizontalAlignment x:Key="GridSourceSelectorAlignment">Right</HorizontalAlignment>
