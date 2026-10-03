@@ -8,6 +8,7 @@ SourceUrl: https://github.com/gOOvER/Penumbra-Themes
 Tags: ["dark", "penumbra", "blur", "fullscreen", "teal", "duplicatehider", "thememodifier", "extrametadataloader"]
 Links:
     GitHub: https://github.com/gOOvER/Penumbra-Themes
+    Ko-fi: https://ko-fi.com/goover
 IconUrl: https://raw.githubusercontent.com/gOOvER/Penumbra-Themes/main/source/PenumbraBlur/Images/applogo.png
 Screenshots:
     - Thumbnail: https://raw.githubusercontent.com/gOOvER/Penumbra-Themes/main/Screenshot_Blur_Main_Thumb.png
@@ -22,3 +23,4 @@ Description: |-
     - DuplicateHider
     - ExtraMetadataLoader (logo + video)
     - ThemeModifier (configurable blur, colors, grid corner radius)
+

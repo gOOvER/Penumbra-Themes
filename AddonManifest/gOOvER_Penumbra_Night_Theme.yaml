@@ -8,6 +8,7 @@ SourceUrl: https://github.com/gOOvER/Penumbra-Themes
 Tags: ["dark", "penumbra", "night", "teal", "animated", "duplicatehider", "themeextras", "extensions", "backgroundchanger", "gameactivity", "successstory"]
 Links:
     GitHub: https://github.com/gOOvER/Penumbra-Themes
+    Ko-fi: https://ko-fi.com/goover
 IconUrl: https://raw.githubusercontent.com/gOOvER/Penumbra-Themes/main/source/PenumbraNight/Images/applogo.png
 Screenshots:
     - Thumbnail: https://raw.githubusercontent.com/gOOvER/Penumbra-Themes/main/Screenshot_Night_Thumb.png
@@ -31,3 +32,4 @@ Description: |-
     - ReviewViewer
     - NewsViewer
     - ThemesDetailsViewToGridViewConverter
+
