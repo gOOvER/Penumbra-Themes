@@ -17,7 +17,12 @@
                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                Stretch="{Settings CoverArtStretch}" ></Image>
                         <ContentControl x:Name="ImageRotater_Cover"
-                                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Stretch"
+                                        Focusable="False"
+                                        IsTabStop="False"/>
                         <Grid Visibility="{Binding ElementName=Proxy, Path=IsVisible, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>

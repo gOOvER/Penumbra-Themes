@@ -34,7 +34,12 @@
                                         Grid.RowSpan="2"
                                         />
                         <ContentControl x:Name="ImageRotater_Cover"
-                                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Stretch"
+                                        Focusable="False"
+                                        IsTabStop="False"
                                         Grid.RowSpan="2"/>
                         <Image Name="PART_ImageCover2"
                                RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"

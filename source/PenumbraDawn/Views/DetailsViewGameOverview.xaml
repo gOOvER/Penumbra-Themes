@@ -1387,7 +1387,12 @@
                             </Border>
 
                             <ContentControl x:Name="ImageRotater_Background"
-                                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            Focusable="False"
+                                            IsTabStop="False"/>
                             <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
 		                                    HorizontalAlignment="Center" VerticalAlignment="Top"
                                             Visibility="{PluginSettings Plugin=BackgroundChanger, Path=HasDataBackground, FallbackValue={x:Static Visibility.Collapsed}}"/>
@@ -1572,6 +1577,10 @@
                                                 />
                                                 <ContentControl x:Name="ImageRotater_Cover"
                                                                 DockPanel.Dock="Right" VerticalAlignment="Bottom"
+                                                                HorizontalContentAlignment="Stretch"
+                                                                VerticalContentAlignment="Stretch"
+                                                                Focusable="False"
+                                                                IsTabStop="False"
                                                                 Height="{Settings GameDetailsCoverHeight}" 
                                                                 RenderOptions.BitmapScalingMode="Fant"/>
                           <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
