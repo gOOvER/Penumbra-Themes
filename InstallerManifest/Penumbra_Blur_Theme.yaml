@@ -1,5 +1,13 @@
 AddonId: Penumbra_Blur_Theme
 Packages:
+  - Version: 1.3.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-10-03
+    PackageUrl: https://github.com/gOOvER/Penumbra-Themes/releases/download/PenumbraBlurv1.3.0/Penumbra_Blur_Theme_1_3_0.pthm
+    Changelog:
+      - Added ImageRotater fast-path cover and background rendering with BackgroundChanger fallback
+      - Added ThemeModifier configurable grid corner radius and expanded styling options
+      - Upgraded DescriptionView HTML styles for DescriptionEditor compatibility
   - Version: 1.1.0
     RequiredApiVersion: 2.9.0
     ReleaseDate: 2026-05-30

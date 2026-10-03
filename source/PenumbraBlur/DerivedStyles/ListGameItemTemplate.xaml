@@ -16,6 +16,8 @@
                                RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                Stretch="{Settings CoverArtStretch}" ></Image>
+                        <ContentControl x:Name="ImageRotater_Cover"
+                                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                         <Grid Visibility="{Binding ElementName=Proxy, Path=IsVisible, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>

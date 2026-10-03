@@ -1,10 +1,14 @@
 Constants:
     - "General"
-    - ExtraMetadataPath: 'ExtraMetadata Folder Path'
-    - UseAbsoluteExtraMetadataPath: 'Use Absolute ExtraMetadata Path'
-    - DefaultBlur: 'Background Blur Radius'
-    - FilterPanelWidth: 'Filter Panel Width'
+    - DuplicateHider_MaxNumberOfIcons(0,10): 'Maximum SourceSelector Icons'
+    - FilterPanelWidth(200, 500): 'Filter Panel Width'
     - "Appearance"
-    - GlyphColor: 'Accent Color (Hex)'
+    - GridItemCornerRadius(0, 30): 'Cover Corner Radius'
+    - FontSize(14, 30): 'Base Font Size'
+    - FontSizeSmall(12, 24): 'Small Font Size'
+    - GlyphColor: 'Primary Accent Color (Hex)'
+    - GlyphLightColor: 'Light Accent Color (Hex)'
     - ControlBackgroundColor: 'Panel Background Color (Hex)'
-    - GridItemCornerRadius: 'Cover Corner Radius'
+    - ControlBackgroundColorDark: 'Dark Panel Background Color (Hex)'
+    - TextColor: 'Primary Text Color (Hex)'
+    - TextColorDark: 'Muted Text Color (Hex)'

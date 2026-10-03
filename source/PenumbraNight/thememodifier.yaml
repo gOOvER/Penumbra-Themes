@@ -1,14 +1,28 @@
-﻿Constants:
+Constants:
   - Global
   - DuplicateHider_MaxNumberOfIcons(0,10): Maximum number of icons for the SourceSelector
+  - FontSize(10, 22): Base font size
+  - FontSizeLarge(12, 26): Large font size
+  - ControlCornerRadius(0, 20): Button and control corner radius
   - Details View
   - TitleVisibility: Visibility of the game title
   - TopSourceSelectorVisibility: Visibility of the SourceSelector on top of the background image
   - DetailsViewMaxContentWidth(600, 2000): Maximum width of the game content
+  - DetailsViewImageHeight(150, 600): Height of the background header section
   - EnableCoverZoom: Enlarge cover image when hovered
   - PlaybuttonBarOpacity(0,1): Playbutton bar opacity multiplier
+  - BackgroundOverlayOpacity(0, 1): Dimming overlay opacity on background
   - ShowPanels: Enable panels
   - TransparentPlayButtonBrush: Playbutton Color
   - Grid View
+  - GridItemCornerRadius(0, 30): Grid cover corner radius
   - UseFakeShadowInGridView: Use more performant texture based shadows around items
   - DropShadowOpacityGrid(0,1): Opacity of the texture based drop shadow
+  - Color Scheme
+  - GlyphColor: Primary accent glyph color
+  - HighlightGlyphColor: Highlight accent glyph color
+  - HoverColor: Hover state accent color
+  - MainColor: Primary control surface color
+  - MainColorDark: Dark control surface color
+  - BackgroundToneColor: Base background tone color
+  - GridItemBackgroundColor: Grid card background color

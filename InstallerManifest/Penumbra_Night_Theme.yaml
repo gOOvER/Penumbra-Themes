@@ -1,5 +1,21 @@
 AddonId: Penumbra_Night_Theme
 Packages:
+  - Version: 1.3.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-10-03
+    PackageUrl: https://github.com/gOOvER/Penumbra-Themes/releases/download/PenumbraNightv1.3.0/Penumbra_Night_Theme_1_3_0.pthm
+    Changelog:
+      - Added PlayniteAchievements support (default provider) with SuccessStory fallback
+      - Added Activity tab with GameActivity timeline chart and session logs
+      - Added CheckDLC tab with ownership indicator
+      - Added CheckLocalizations flag icons, button, and language support matrix
+      - Added SystemChecker requirement status and quick-launch button
+      - Added ImageRotater fast-path cover and background rendering
+      - Added ThemeModifier icon shapes and custom options
+      - Upgraded DescriptionView HTML styles for DescriptionEditor compatibility
+      - Added Roberts Space Industries (RSI) library banner
+      - Enabled full WPF list and grid virtualization with pixel-precise smooth scrolling
+      - Fixed dialog window clipping and border encroachment
   - Version: 1.2.0
     RequiredApiVersion: 2.9.0
     ReleaseDate: 2026-05-30

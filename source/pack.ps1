@@ -6,6 +6,11 @@ $toolbox = if (Test-Path "$env:LOCALAPPDATA\Playnite\Toolbox.exe") {
     "Toolbox.exe"
 }
 
-& $toolbox pack PenumbraNight .
-& $toolbox pack PenumbraBlur .
-& $toolbox pack PenumbraDawn .
+Push-Location $PSScriptRoot
+try {
+    & $toolbox pack PenumbraNight .
+    & $toolbox pack PenumbraBlur .
+    & $toolbox pack PenumbraDawn .
+} finally {
+    Pop-Location
+}

@@ -49,6 +49,8 @@
                             <FadeImage HorizontalAlignment="Center" VerticalAlignment="Top"
                                        x:Name="PART_ImageBackground"  Background="{DynamicResource MainBackgourndBrush}"
                                        />
+                            <ContentControl x:Name="ImageRotater_Background"
+                                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                             <MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
                                       Stretch="UniformToFill"
                                       HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="1">

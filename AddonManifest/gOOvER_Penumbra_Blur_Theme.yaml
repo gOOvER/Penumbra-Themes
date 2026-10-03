@@ -5,7 +5,7 @@ Author: gOOvER
 ShortDescription: Dark fullscreen theme with blur effects, noise texture, teal accents and extension support.
 InstallerManifestUrl: https://raw.githubusercontent.com/gOOvER/Penumbra-Themes/main/InstallerManifest/Penumbra_Blur_Theme.yaml
 SourceUrl: https://github.com/gOOvER/Penumbra-Themes
-Tags: ["dark", "penumbra", "blur", "fullscreen", "teal", "duplicatehider", "thememodifier", "extrametadataloader"]
+Tags: ["dark", "penumbra", "blur", "fullscreen", "teal", "duplicatehider", "thememodifier", "extrametadataloader", "imagerotater", "backgroundchanger"]
 Links:
     GitHub: https://github.com/gOOvER/Penumbra-Themes
     Ko-fi: https://ko-fi.com/goover
@@ -22,5 +22,8 @@ Description: |-
     Supported extension integrations:
     - DuplicateHider
     - ExtraMetadataLoader (logo + video)
+    - ImageRotater
+    - BackgroundChanger
     - ThemeModifier (configurable blur, colors, grid corner radius)
+    - DescriptionEditor
 
